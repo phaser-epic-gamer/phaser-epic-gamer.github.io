@@ -12,9 +12,7 @@
 </head>
 <body>
 
-<script type="module">
-
-import { createRequire } from '../module';
+<script>
 
 var config = {
     type: Phaser.AUTO,
@@ -47,11 +45,11 @@ var game = new Phaser.Game(config);
 
 function preload ()
 {
-    this.load.image('sky', createRequire('/assets/sky.png').default);
-    this.load.image('ground', createRequire('/assets/platform.png'));
-    this.load.image('star', createRequire('/assets/star.png'));
-    this.load.image('bomb', createRequire('/assets/bomb.png'));
-    this.load.spritesheet('dude', createRequire('/assets/dude.png'), { frameWidth: 32, frameHeight: 48 });
+    this.load.image('sky', require('assets/sky.png').default);
+    this.load.image('ground', require('assets/platform.png'));
+    this.load.image('star', require('assets/star.png'));
+    this.load.image('bomb', require('assets/bomb.png'));
+    this.load.spritesheet('dude', require('assets/dude.png'), { frameWidth: 32, frameHeight: 48 });
 }
 
 function create ()
